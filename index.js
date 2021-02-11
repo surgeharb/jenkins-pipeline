@@ -1,6 +1,6 @@
 // importing node express framework
 const express = require('express');
- 
+
 const app = express();
 
 // respond with "hello world" for requests that hit our root "/"
@@ -9,6 +9,8 @@ app.get('/', (req, res) => {
 });
 
 // listen to port 3000 by default
-app.listen(process.env.PORT || 3000);
- 
+app.listen(process.env.PORT || 3000, () => {
+  console.info('server is running...');
+});
+
 module.exports = app;
